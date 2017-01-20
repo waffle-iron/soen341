@@ -1,3 +1,7 @@
 # soen341
 SOEN 341 project
-Brian Kim Thong Vo
+
+### Members
+
+* Brian Kim Thong Vo
+* Michel Chatmajian
