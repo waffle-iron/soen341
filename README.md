@@ -6,3 +6,4 @@ SOEN 341 project
 * Brian Kim Thong Vo
 * Michel Chatmajian
 * Justin Leger
+* Eric Xiao
