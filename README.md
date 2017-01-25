@@ -8,3 +8,4 @@ SOEN 341 project
 * Justin Leger
 * Eric Xiao
 * Kevin Zhang
+* Steven Ha
