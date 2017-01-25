@@ -7,3 +7,4 @@ SOEN 341 project
 * Michel Chatmajian
 * Justin Leger
 * Eric Xiao
+* Kevin Zhang
