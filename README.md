@@ -9,3 +9,4 @@ SOEN 341 project
 * Eric Xiao
 * Kevin Zhang
 * Steven Ha
+* Ethan Tran
