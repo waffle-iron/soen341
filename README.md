@@ -10,3 +10,4 @@ SOEN 341 project
 * Kevin Zhang
 * Steven Ha
 * Ethan Tran
+* Brendan McGarry
