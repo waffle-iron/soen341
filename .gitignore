@@ -1,4 +1,4 @@
-idea/
+*.idea/
 *.keystore
 *.sw*
 .DS_Store
