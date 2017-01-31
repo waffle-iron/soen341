@@ -1,0 +1,20 @@
+{
+  "name": "soen341",
+  "description": "Soen 341 chat app",
+  "main": "index.js",
+  "authors": [
+    "Earthii <xiao_eric@hotmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jusleg/soen341",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
