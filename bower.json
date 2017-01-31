@@ -3,7 +3,14 @@
   "description": "Soen 341 chat app",
   "main": "index.js",
   "authors": [
-    "Earthii <xiao_eric@hotmail.com>"
+    "Earthii <xiao_eric@hotmail.com>",
+    "Justin",
+    "Steven",
+    "Kevin",
+    "Ethan",
+    "Michel",
+    "Brian",
+    "Brendan"
   ],
   "license": "ISC",
   "homepage": "https://github.com/jusleg/soen341",
