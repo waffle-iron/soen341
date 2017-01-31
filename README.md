@@ -12,3 +12,6 @@ SOEN 341 project
 * Ethan Tran
 * Brendan McGarry
 
+### To Run The Project 
+Be sure to download the required dependencies by running 
+> bower install && npm install
