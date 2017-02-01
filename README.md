@@ -44,3 +44,4 @@ bower install && npm install
 * AngularJs https://angularjs.org/
 * Jquery - http://jquery.com
 * Digital Ocean - https://digitalocean.com
+* Sass - http://sass-lang.com/install
