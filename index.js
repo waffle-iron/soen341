@@ -13,17 +13,15 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-
-//serve public folders, potentially Angular App
-app.use(express.static(__dirname + '/public/'));
+// set the static files location /public/img will be /img for us
+app.use(express.static(__dirname + '/public'));
 //serve bower components
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 
-//routings
+//routes ==============================================================================
 app.get('/', (req,res) => {
     res.redirect('/login');
-    // res.sendFile(__dirname + '/public/views/login.html');
 });
 
 app.get('/login', (req,res) => {
@@ -32,22 +30,19 @@ app.get('/login', (req,res) => {
 
 let user_authenticated = false;
 app.post('/login', (req, res) => {
-    if(req.body.username == db.users[0].username){
-        console.log('ok good username')
-    }
-
+    let good_user_pass = false;
     for(let i =0; i< db.users.length; i++) {
-        let good_user_pass = false;
         if (req.body.username == db.users[i].username && req.body.password == db.users[i].password) {
             good_user_pass = true;
+            break;
         }
+    }
 
-        if(good_user_pass == true){
-            user_authenticated = true;
-            res.redirect('/chat');
-        } else {
-            res.send('Incorrect username or password');
-        }
+    if(good_user_pass == true){
+        user_authenticated = true;
+        res.sendFile(__dirname+'/public/views/index.html');
+    } else {
+        res.send('Incorrect username or password');
     }
 });
 
@@ -58,10 +53,6 @@ app.get('/chat', function(req,res) {
         res.send("Please login to access the chat");
     }
 });
-// set the static files location /public/img will be /img for us
-app.use(express.static(__dirname + '/public'));
-
-// routes ======================================================================
 
 // api ---------------------------------------------------------------------
 
@@ -80,15 +71,15 @@ app.delete('/api/todos/:todo_id', function(req, res) {
 
 });
 
-app.get('/chat', function(req,res){
-    res.sendFile(__dirname + '/public/views/chat.html');
-});
-
 // application -------------------------------------------------------------
 
 // load the single view file (angular will handle the page changes on the front-end)
 app.get('*', function(req, res) {
-    res.sendFile(__dirname + '/public/index.html');
+    if(user_authenticated == false){
+        res.redirect('/login');
+    } else {
+        res.sendFile(__dirname + '/public/views/index.html');
+    }
 });
 
 
