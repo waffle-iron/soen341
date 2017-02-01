@@ -12,6 +12,7 @@ app.use(express.static(__dirname + '/public/'));
 
 //serve bower components
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
+<<<<<<< HEAD
 
 
 //routings
@@ -34,6 +35,11 @@ app.post('/login', (req, res) => {
 
 app.get('/chat', function(req,res){
     res.sendFile(__dirname + '/public/views/chat.html');
+=======
+
+app.get('/chat', function(req,res){
+   res.sendFile(__dirname + '/public/views/index.html');
+>>>>>>> 3515a1a35b75f25c99b3fb9b61087711548fa13d
 });
 
 
