@@ -12,7 +12,6 @@ app.use(express.static(__dirname + '/public/'));
 
 //serve bower components
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
-<<<<<<< HEAD
 
 
 //routings
@@ -33,36 +32,28 @@ app.post('/login', (req, res) => {
     }
 });
 
-app.get('/chat', function(req,res){
+app.get('/chat', function(req,res) {
     res.sendFile(__dirname + '/public/views/chat.html');
-=======
-
-app.get('/chat', function(req,res){
-   res.sendFile(__dirname + '/public/views/index.html');
->>>>>>> 3515a1a35b75f25c99b3fb9b61087711548fa13d
 });
 
 
-
-
-
-
-io.on('connection',function(socket){
+io.on('connection', function (socket) {
     //user is connected...
     console.log('a user connected');
 
     //when user sends a message
-    socket.on('chat message',function(msg){
+    socket.on('chat message', function (msg) {
         console.log('message sent: ' + msg);
-        io.emit('chat message',msg);
+        io.emit('chat message', msg);
     });
 
     //when user leaves, do something
-    socket.on('disconnect', function(){
+    socket.on('disconnect', function () {
         console.log('user disconnected')
     });
 });
 
-http.listen(9001,function(){
+http.listen(9001, function () {
     console.log('listening on*: 9001');
 });
+
