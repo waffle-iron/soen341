@@ -3,14 +3,37 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-//serve public folders, potentially Angular App
+// set the static files location /public/img will be /img for us
 app.use(express.static(__dirname + '/public'));
 
-//serve bower components
-app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+// routes ======================================================================
 
-app.get('/', function(req,res){
-    res.sendFile(__dirname + '/public/index.html');
+// api ---------------------------------------------------------------------
+
+// get all todos
+app.get('/api/todos', function(req, res) {
+
+});
+
+// create todo and send back all todos after creation
+app.post('/api/todos', function(req, res) {
+
+});
+
+// delete a todo
+app.delete('/api/todos/:todo_id', function(req, res) {
+
+});
+
+app.get('/chat', function(req,res){
+    res.sendFile(__dirname + '/public/views/chat.html');
+});
+
+// application -------------------------------------------------------------
+
+// load the single view file (angular will handle the page changes on the front-end)
+app.get('*', function(req, res) {
+    res.sendFile('./public/index.html');
 });
 
 io.on('connection',function(socket){
