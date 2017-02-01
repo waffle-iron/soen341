@@ -22,7 +22,8 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 //routings
 app.get('/', (req,res) => {
-    res.sendFile(__dirname + '/public/views/login.html');
+    res.redirect('/login');
+    // res.sendFile(__dirname + '/public/views/login.html');
 });
 
 app.get('/login', (req,res) => {
@@ -31,12 +32,6 @@ app.get('/login', (req,res) => {
 
 let user_authenticated = false;
 app.post('/login', (req, res) => {
-    // console.log(res.json);
-    // res.json(req.body);
-    console.log(req.body.username + req.body.password);
-    console.log(db.users[1].username);
-    console.log(db.users.length);
-
     if(req.body.username == db.users[0].username){
         console.log('ok good username')
     }
@@ -57,11 +52,43 @@ app.post('/login', (req, res) => {
 });
 
 app.get('/chat', function(req,res) {
-    if(user_authenticated == true) {
+    if (user_authenticated == true) {
         res.sendFile(__dirname + '/public/views/chat.html');
     } else {
         res.send("Please login to access the chat");
     }
+});
+// set the static files location /public/img will be /img for us
+app.use(express.static(__dirname + '/public'));
+
+// routes ======================================================================
+
+// api ---------------------------------------------------------------------
+
+// get all todos
+app.get('/api/todos', function(req, res) {
+
+});
+
+// create todo and send back all todos after creation
+app.post('/api/todos', function(req, res) {
+
+});
+
+// delete a todo
+app.delete('/api/todos/:todo_id', function(req, res) {
+
+});
+
+app.get('/chat', function(req,res){
+    res.sendFile(__dirname + '/public/views/chat.html');
+});
+
+// application -------------------------------------------------------------
+
+// load the single view file (angular will handle the page changes on the front-end)
+app.get('*', function(req, res) {
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 
