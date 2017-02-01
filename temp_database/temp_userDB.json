@@ -2,12 +2,12 @@
   "users":{
     "users": [
       {
-        "username": "user1",
-        "password": "password1"
+        "username": "user",
+        "password": "pass"
       },
       {
-        "username": "user2",
-        "password": "password2"
+        "username": "admin",
+        "password": "admin"
       }
     ]
   }

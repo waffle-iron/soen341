@@ -9,32 +9,11 @@
     <title>Form</title>
 </head>
 <body ng-controller="mainController as vm">
-    <div>
+<div>
+    <form action="/login" method="post" id="login">
+        Username: <input type="text" id="username" name="username" ng-model="username"><br>
+        Password: <input type="password" id="password" name="password" ng-model="password"><br>
+        <button type="submit" value="submit" class="btn btn-primary" ng-click="vm.submit(username, password)">Login</button>
+    </form>
+</div>
 
-<<<<<<< HEAD
-        <form action="/login" method="post" id="login">
-            Username: <input type="text" id="username" name="username" ng-model="username"><br>
-            Password: <input type="password" id="password" name="password" ng-model="password"><br>
-            <button type="submit" class="btn btn-primary" ng-click="vm.submit(username, password)">Login</button>
-
-        </form>
-    </div>
-=======
-<!-- LOGIN FORM -->
-<form action="/login" method="post">
-    <div class="form-group">
-        <label>Email</label>
-        <input type="text" class="form-control" name="username">
-    </div>
-    <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" name="password">
-    </div>
-
-    <button type="submit" class="btn btn-warning btn-lg">Login</button>
-</form>
-
-
-</body>
-</html>
->>>>>>> 3515a1a35b75f25c99b3fb9b61087711548fa13d
