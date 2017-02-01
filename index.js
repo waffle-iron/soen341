@@ -4,13 +4,13 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 //serve public folders, potentially Angular App
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/'));
 
 //serve bower components
-app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
-app.get('/', function(req,res){
-    res.sendFile(__dirname + '/public/index.html');
+app.get('/chat', function(req,res){
+   res.sendFile(__dirname + '/public/views/index.html');
 });
 
 io.on('connection',function(socket){
