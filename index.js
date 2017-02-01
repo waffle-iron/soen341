@@ -33,7 +33,7 @@ app.get('/chat', function(req,res){
 
 // load the single view file (angular will handle the page changes on the front-end)
 app.get('*', function(req, res) {
-    res.sendFile('./public/index.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 io.on('connection',function(socket){
