@@ -1,5 +1,8 @@
 # SOEN 341
+[![Build Status](https://travis-ci.org/jusleg/soen341.svg?branch=Testing)](https://travis-ci.org/jusleg/soen341)
+
 SOEN 341 project
+
 
 [View Wiki](https://github.com/jusleg/soen341/wiki)
 

@@ -4,6 +4,7 @@
   "description": "Soen 341 chat app",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.16.0",
     "chai": "^3.5.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
