@@ -11,5 +11,5 @@ node_js:
   #TODO: We could potentially write a script to run which fetches dependencies we need
 
 install:
-    -npm install
+    #-npm install
     #Any other commands to fetch dependencies are to be added here
