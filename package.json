@@ -29,4 +29,8 @@
     "url": "https://github.com/jusleg/soen341/issues"
   },
   "homepage": "https://github.com/jusleg/soen341#readme"
+
+  //Tests thats TravisCI is to run are specified here
+  "scripts": {
+    //"test": "./node_modules/jshint/bin/jshint hello.js"
 }
