@@ -1,5 +1,10 @@
 # SOEN 341
+[![Build Status](https://travis-ci.org/jusleg/soen341.svg?branch=Testing)](https://travis-ci.org/jusleg/soen341)
+
 SOEN 341 project
+
+
+[View Wiki](https://github.com/jusleg/soen341/wiki)
 
 ## Introduction
 Our project is a hyperlocalized chatroom which will allow people in the same classroom to 
@@ -19,24 +24,6 @@ start and stop the chatroom whenever they feel it is necessary to do so.
 * Steven Ha
 * Ethan Tran
 * Brendan McGarry
-
-## To Run The Project 
-This project has numurous dependencies that must be installed in order for it run.
-
-First, install [Node](https://nodejs.org/en/) and make sure it is properly installed by doing 
-```
-node -v && npm -v
-```
-
-Once node is installed, make sure to get bower by running the command 
-```
-npm install -g bower
-```
-
-Finally, download the required dependencies by running 
-```
-bower install && npm install
-```
 
 ## Technologies Used
 * NodeJs https://nodejs.org/en/
