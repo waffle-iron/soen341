@@ -11,8 +11,8 @@
 <body ng-controller="mainController as vm">
 <div>
     <form action="/login" method="post" id="login">
-        Username: <input type="text" id="username" name="username" ng-model="username"><br>
+        Email: <input type="text" id="email" name="email" ng-model="email"><br>
         Password: <input type="password" id="password" name="password" ng-model="password"><br>
-        <button type="submit" value="submit" class="btn btn-primary" ng-click="vm.submit(username, password)">Login</button>
+        <button type="submit" value="submit" class="btn btn-primary" ng-click="vm.submit(email, password)">Login</button>
     </form>
 </div>
