@@ -5,8 +5,21 @@ html{
   height:100%;
 }
 body{
+  font-family: 'Lato', sans-serif !important;
   margin:0;
   padding:0;
   height:100%;
   width:100%;
+  header{
+    padding:10px;
+    height:50px;
+    background-color:lightgoldenrodyellow;
+    span{
+      float:right;
+      margin-left:20px;
+      i{
+        margin-right:5px;
+      }
+    }
+  }
 }
