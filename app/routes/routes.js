@@ -11,8 +11,8 @@ const passport = require('passport'),
 const path = require('path');
 
 router.get('/', (req, res) => {
-    console.log('inside');
-    res.redirect('/login');
+    res.sendFile(path.join(__dirname, '../../public/app/app.html'));
+    // res.redirect('/login');
 });
 
 router.get('/login', (req,res) => {
@@ -43,7 +43,7 @@ router.post('/login',
 );
 
 router.get('/chat', function(req,res) {
-    res.sendFile(path.join(__dirname, '/../../public/views/chat.html'));
+    res.sendFile(path.join(__dirname, '/../../public/views/classroom.html'));
 });
 
 module.exports = router;

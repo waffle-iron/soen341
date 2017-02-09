@@ -4,7 +4,7 @@ angular.module('app.view2', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/view2', {
-            templateUrl: 'views/view2.html',
+            templateUrl: 'views/classroom.html',
             controller: 'view2Ctrl',
             controllerAs:'vm'
         });
@@ -13,6 +13,6 @@ angular.module('app.view2', ['ngRoute'])
     .controller('view2Ctrl', view2Ctrl);
 
 function view2Ctrl ($http){
-    console.log('view 2 Ctrl')
-
+    var vm = this;
+    vm.classroomNum = 2;
 }
