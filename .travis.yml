@@ -4,9 +4,30 @@ node_js:
   - "6.9.4"
   - "iojs"
 
+addons:
+  ssh_known_hosts:
+      -chevaldeguerre.xyz
+
+before_deploy:
+- openssl aes-256-cbc aes-256-cbc -K $encrypted_<...>_key -iv $encrypted_<...>_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
+- eval "$(ssh-agent -s)"
+- chmod 600 /tmp/deploy_rsa
+- ssh-add /tmp/deploy_rsa
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/ root@chevaldeguerre.xyz:/var/www/soen341
+  on:
+    branch: master
+
+install:
+  -npm install
+  -bower install
+
   #install: ./install-dependencies.sh
   #TODO: We could potentially write a script to run which fetches dependencies we need
 
 #install:
-    #-npm install
     #Any other commands to fetch dependencies are to be added here
+    #-npm install
