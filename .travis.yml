@@ -21,9 +21,9 @@ deploy:
   on:
     branch: master
 
-install:
-  -npm install
-  -bower install
+#install:
+#  -npm install
+#  -bower install
 
   #install: ./install-dependencies.sh
   #TODO: We could potentially write a script to run which fetches dependencies we need
