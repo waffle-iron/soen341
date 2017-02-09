@@ -3,5 +3,5 @@
  */
 (function(){
     'use strict';
-    angular.module('app.view1',[]);
+    angular.module('app.classroom',[]);
 })();

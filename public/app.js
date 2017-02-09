@@ -6,8 +6,7 @@
     // Declare app level module which depends on views, and components
     angular.module('app', [
         'ngRoute',
-        'app.view1',
-        'app.view2'
+        'app.classroom'
     ]).
     config(['$locationProvider', '$routeProvider','$httpProvider',
         function($locationProvider, $routeProvider,$httpProvider) {
