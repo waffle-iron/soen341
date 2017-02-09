@@ -1,57 +1,71 @@
-var express = require('express');
-var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+'use strict';
+
+const express = require('express');
+const app = express();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+const bodyParser = require('body-parser');
+const passport = require('passport'), LocalStrategy = require('passport-local').Strategy;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const ObjectId = Schema.ObjectId;
+const logger = require('morgan');
+const session = require('express-session');
+
+
+//in order to parse body responses
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
+//to log sever connections
+app.use(logger('dev'));
 
 // set the static files location /public/img will be /img for us
 app.use(express.static(__dirname + '/public'));
+//serve bower components
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
-// routes ======================================================================
+const routes = require('./app/routes/routes');
+const api = require('./app/routes/api');
 
-// api ---------------------------------------------------------------------
+//Unprotected routes
+app.use('/', routes);
 
-// get all todos
-app.get('/api/todos', function(req, res) {
-
+//Middleware to check of user is authenticated with express-session
+app.use((req, res, next) => {
+    // if(! req.session.user){
+    //     res.redirect('/login');
+    // } else {
+        next();
+    // }
 });
 
-// create todo and send back all todos after creation
-app.post('/api/todos', function(req, res) {
+//Api routes
+app.use('/api', api);
 
-});
 
-// delete a todo
-app.delete('/api/todos/:todo_id', function(req, res) {
 
-});
 
-app.get('/chat', function(req,res){
-    res.sendFile(__dirname + '/public/views/chat.html');
-});
 
-// application -------------------------------------------------------------
-
-// load the single view file (angular will handle the page changes on the front-end)
-app.get('*', function(req, res) {
-    res.sendFile(__dirname + '/public/index.html');
-});
-
-io.on('connection',function(socket){
+io.on('connection', function (socket) {
     //user is connected...
     console.log('a user connected');
 
     //when user sends a message
-    socket.on('chat message',function(msg){
-       console.log('message sent: ' + msg);
-       io.emit('chat message',msg);
+    socket.on('chat message', function (msg) {
+        console.log('message sent: ' + msg);
+        io.emit('chat message', msg);
     });
 
     //when user leaves, do something
-    socket.on('disconnect', function(){
-       console.log('user disconnected')
+    socket.on('disconnect', function () {
+        console.log('user disconnected')
     });
 });
 
-http.listen(9001,function(){
+
+http.listen(9001, function () {
     console.log('listening on*: 9001');
 });
+
