@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>Soen 341 Chat App</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="../css/mainStyle.css">
 
     <script src="/socket.io/socket.io.js"></script>
@@ -14,7 +16,7 @@
 <body ng-app="app">
     <!--Nav Bar will be somewhere here, do include in the future-->
     <div class="col-sm-3 nav">
-        <div class="logo">LOGO</div>
+        <div class="logo">SOEN 341</div>
         <ul>
             <li><a ng-href="chat">Chat</a></li>
             <li><a ng-href="#/class/{{'comp346'}}">Comp 346</a></li>
@@ -23,6 +25,10 @@
         </ul>
 
     </div>
+    <header>
+        <span><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</span>
+        <span><i class="fa fa-cog" aria-hidden="true"></i>Setting</span>
+    </header>
     <div class="col-sm-9" ng-view>
         <!--Dynamic view goes here -->
     </div>
