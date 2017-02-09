@@ -16,9 +16,9 @@
     <div class="col-sm-3 nav">
         <div class="logo">LOGO</div>
         <ul>
-            <li><a href="chat">Chat</a></li>
-            <li><a href="#/view1">View 1</a></li>
-            <li><a href="#/view2">View 2</a></li>
+            <li><a ng-href="chat">Chat</a></li>
+            <li><a ng-href="#/class/{{'comp346'}}">Comp 346</a></li>
+            <li><a ng-href="#/class/{{'engr371'}}">Engr 371</a></li>
             <li><span>Class Rooms go here</span></li>
         </ul>
 
@@ -32,11 +32,9 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <!--MODULES-->
     <script src="../app.js"></script>
-    <script src="../javascript/modules/view2.module.js"></script>
-    <script src="../javascript/modules/view1.module.js"></script>
+    <script src="../javascript/modules/classroom.module.js"></script>
     <!--CONTROLLERS-->
-    <script src="../javascript/view1.controller.js"></script>
-    <script src="../javascript/view2.controller.js"></script>
+    <script src="../javascript/classroom.controller.js"></script>
 
 </body>
 </html>
