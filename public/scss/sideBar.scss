@@ -1,0 +1,28 @@
+.sideBar{
+  height:100%;
+  padding:0;
+  z-index:99;
+  background-color:$secondary_color;
+  transition: transform ease-in 0.5s;
+  ul{
+    padding-left:20px;
+    list-style:none;
+    li{
+      margin:20px;
+      span{
+        color:red;
+      }
+    }
+  }
+}
+//for phones
+@media screen and (max-width: 767px) {
+  .sideBar{
+    position:absolute;
+    transform:translateX(-300px);
+  }
+  .sideBarOpen{
+    opacity:0.9;
+    transform:translateX(0);
+  }
+}

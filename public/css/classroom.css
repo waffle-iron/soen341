@@ -1,2 +1,7 @@
 .classroom {
-  background-color: lightgreen; }
+  height: 100%; }
+  .classroom .sendMsg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px; }
