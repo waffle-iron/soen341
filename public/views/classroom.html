@@ -18,9 +18,18 @@
     });
 </script>
 <div class="classroom">
-    <h1>{{vm.classId}}</h1>
-    <ul id="messages"></ul>
-    <form action="">
-        <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+    <span>{{vm.classId}}</span>
+    <div>
+        <ul id="messages"></ul>
+    </div>
+    <div class="sendMsg">
+        <form action="">
+            <div class="input-group">
+                <input id="m" type="text" class="form-control" placeholder="Message Text" aria-describedby="basic-addon2">
+                <span class="input-group-btn">
+                    <button class="btn btn-default">Send</button>
+                </span>
+            </div>
+        </form>
+    </div>
 </div>

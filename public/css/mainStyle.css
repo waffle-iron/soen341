@@ -1,28 +1,36 @@
-.nav {
+.sideBar {
+  height: 100%;
   padding: 0;
-  background-color: pink;
-  height: 100%; }
-  .nav .logo {
-    width: 100%;
-    height: 50px;
-    background-color: #00b3ee;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center; }
-  .nav ul {
+  z-index: 99;
+  background-color: #D3D6DB;
+  transition: transform ease-in 0.5s; }
+  .sideBar ul {
     padding-left: 20px;
     list-style: none; }
-    .nav ul li {
+    .sideBar ul li {
       margin: 20px; }
-      .nav ul li span {
+      .sideBar ul li span {
         color: red; }
 
+@media screen and (max-width: 767px) {
+  .sideBar {
+    position: absolute;
+    transform: translateX(-300px); }
+
+  .sideBarOpen {
+    opacity: 0.9;
+    transform: translateX(0); } }
 .classroom {
-  background-color: lightgreen; }
+  height: 100%; }
+  .classroom .sendMsg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px; }
 
 html {
-  height: 100%; }
+  height: 100%;
+  width: 100%; }
 
 body {
   font-family: 'Lato', sans-serif !important;
@@ -30,12 +38,21 @@ body {
   padding: 0;
   height: 100%;
   width: 100%; }
-  body header {
-    padding: 10px;
-    height: 50px;
-    background-color: lightgoldenrodyellow; }
-    body header span {
-      float: right;
-      margin-left: 20px; }
-      body header span i {
-        margin-right: 5px; }
+  body .outer-container {
+    margin: 0;
+    height: 100%;
+    width: 100%; }
+  body .content-container {
+    height: 100%;
+    overflow: hidden;
+    padding-left: 0px;
+    padding-right: 0px; }
+    body .content-container .navbar-toggle {
+      border: 0; }
+    body .content-container .navbar {
+      background-color: #EFF0F4;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0px; }
+    body .content-container .content {
+      height: 100%; }

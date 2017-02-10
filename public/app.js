@@ -10,7 +10,6 @@
     ]).
     config(['$locationProvider', '$routeProvider','$httpProvider',
         function($locationProvider, $routeProvider,$httpProvider) {
-            console.log('app config');
             $locationProvider.hashPrefix(''); // or with '!'
 
             $routeProvider.otherwise({redirectTo: ''});
