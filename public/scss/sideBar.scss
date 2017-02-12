@@ -15,14 +15,22 @@
     }
   }
 }
+.sideBar-toggle{
+  margin-left: 9px;
+  float:left;
+}
 //for phones
 @media screen and (max-width: 767px) {
   .sideBar{
+    width:300px;
     position:absolute;
     transform:translateX(-300px);
   }
   .sideBarOpen{
     opacity:0.9;
-    transform:translateX(0);
+    transform:translateX(0px);
+  }
+  .content-container-moveX{
+    transform:translateX(300px);
   }
 }
