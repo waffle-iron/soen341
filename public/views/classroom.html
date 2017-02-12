@@ -1,0 +1,19 @@
+<div class="classroom">
+    <div id="shadow"></div>
+    <span>{{vm.classId}}</span>
+    <div>
+        <ul id="messages">
+            <li ng-repeat="message in vm.messages">{{message.user}} : {{message.message}}</li>
+        </ul>
+    </div>
+    <div class="sendMsg">
+        <form ng-submit="vm.sendMsg()">
+            <div class="input-group">
+                <input ng-model="vm.m" type="text" class="form-control" placeholder="Message Text" >
+                <span class="input-group-btn">
+                    <button class="btn btn-default">Send</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
