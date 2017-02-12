@@ -24,7 +24,7 @@
                 <li><span>Class Rooms go here</span></li>
             </ul>
         </div>
-        <div class="col-sm-9 col-md-10 content-container">
+        <div id="content" class="col-sm-9 col-md-10 content-container">
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -81,6 +81,8 @@
         //for the menu collapse feature in mobile
         $('#sideBar-toggle').click(function(){
             $('#sideBar').toggleClass('sideBarOpen');
+            $('#content').toggleClass('content-container-moveX');
+            $('#shadow').toggleClass('shadow-active');
         })
     </script>
     <!--ANGULAR-->
