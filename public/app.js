@@ -11,10 +11,12 @@
     config(['$locationProvider', '$routeProvider','$httpProvider',
         function($locationProvider, $routeProvider,$httpProvider) {
             $locationProvider.hashPrefix(''); // or with '!'
-
             $routeProvider.otherwise({redirectTo: ''});
-
             // $httpProvider.defaults.useXDomain = true;
             // delete $httpProvider.defaults.headers.common['X-Requested-With'];
-        }]);
+        }])
+        .controller('appCtrl', function($scope, $rootScope) {
+            $rootScope.socket = io();
+            console.log('User connected');
+        });
 })();
