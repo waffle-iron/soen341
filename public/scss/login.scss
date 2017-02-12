@@ -1,49 +1,3 @@
-.sideBar {
-  height: 100%;
-  padding: 0;
-  z-index: 99;
-  background-color: #D3D6DB;
-  transition: transform ease-in 0.5s; }
-  .sideBar ul {
-    padding-left: 20px;
-    list-style: none; }
-    .sideBar ul li {
-      margin: 20px; }
-      .sideBar ul li span {
-        color: red; }
-
-.sideBar-toggle {
-  margin-left: 9px;
-  float: left; }
-
-@media screen and (max-width: 767px) {
-  .sideBar {
-    width: 300px;
-    position: absolute;
-    transform: translateX(-300px); }
-
-  .sideBarOpen {
-    opacity: 0.9;
-    transform: translateX(0px); }
-
-  .content-container-moveX {
-    transform: translateX(300px); } }
-.classroom {
-  height: 100%; }
-  @media screen and (max-width: 767px) {
-    .classroom .shadow-active {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      transition: background-color 0.4s;
-      z-index: 99; } }
-  .classroom .sendMsg {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 20px; }
-
 #loginPage {
   height: 100%;
   width: 100%;
@@ -69,24 +23,26 @@
   background-size: 20px 20px;
   border-bottom: none;
   border-top-right-radius: 5px;
-  border-top-left-radius: 5px; }
+  border-top-left-radius: 5px;  }
 
 #password {
   background: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698630-icon-114-lock-128.png) no-repeat 5px center;
   -webkit-background-size: 20px 20px;
   background-size: 20px 20px;
   border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px; }
+  border-bottom-left-radius: 5px;  }
 
 .loginFormInput {
   padding-left: 30px;
   height: 40px;
   width: 260px;
-  border: 1px solid #4c4c4c; }
+  border: 1px solid #4c4c4c;
+}
 
 .loginFormInput:focus {
   outline: none;
-  border-color: #8000ff; }
+  border-color: rgb(128, 0, 255);
+}
 
 #loginSubmit {
   margin-top: 20px;
@@ -145,24 +101,28 @@
   color: white;
   height: 100px;
   padding: 10px;
-  display: none; }
+  display: none;
+}
 
 @media (max-width: 700px) {
   #loginContainer {
     width: 320px;
-    height: 380px; }
-
+    height: 380px;
+  }
   #loginLeftContainer {
-    display: none; }
-
+    display: none;
+  }
   #loginRightContainer {
-    border-radius: 10px; }
-
+    border-radius: 10px;
+  }
   .descriptiveText {
-    margin-top: 40px; }
-
+    margin-top: 40px;
+  }
   #hiddenRight {
-    display: block; } }
+    display: block;
+  }
+}
+
 .logDescLI {
   font-weight: 300;
   font-size: 0.9em; }
@@ -298,32 +258,3 @@ input::-webkit-input-placeholder {
   100% {
     -webkit-transform: translateY(-1200px) rotate(600deg);
     transform: translateY(-1200px) rotate(600deg); } }
-html {
-  height: 100%;
-  width: 100%; }
-
-body {
-  font-family: 'Lato', sans-serif !important;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%; }
-  body .outer-container {
-    margin: 0;
-    height: 100%;
-    width: 100%; }
-  body .content-container {
-    height: 100%;
-    overflow: hidden;
-    padding-left: 0px;
-    padding-right: 0px;
-    transition: transform ease-in 0.5s; }
-    body .content-container .navbar-toggle {
-      border: 0; }
-    body .content-container .navbar {
-      background-color: #EFF0F4;
-      border: 0;
-      border-radius: 0;
-      margin-bottom: 0px; }
-    body .content-container .content {
-      height: 100%; }
