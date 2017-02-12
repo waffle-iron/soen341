@@ -1,31 +1,14 @@
-<script src="/socket.io/socket.io.js"></script>
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-<script>
-    //in-line javascript to test message sending
-    var socket = io();
-    $(function(){
-        //send new message
-        $('form').submit(function(){
-            var message = $('#m');
-            socket.emit('chat message', message.val());
-            message.val('');
-            return false;
-        });
-    });
-    //when the client receives an emit (new message) from server
-    socket.on('chat message', function(msg){
-        $('#messages').append($('<li>').text(msg))
-    });
-</script>
 <div class="classroom">
     <span>{{vm.classId}}</span>
     <div>
-        <ul id="messages"></ul>
+        <ul id="messages">
+            <li ng-repeat="message in vm.messages">{{message.user}} : {{message.message}}</li>
+        </ul>
     </div>
     <div class="sendMsg">
-        <form action="">
+        <form action="" ng-submit="vm.sendMsg()">
             <div class="input-group">
-                <input id="m" type="text" class="form-control" placeholder="Message Text" aria-describedby="basic-addon2">
+                <input ng-model="vm.m" type="text" class="form-control" placeholder="Message Text" >
                 <span class="input-group-btn">
                     <button class="btn btn-default">Send</button>
                 </span>

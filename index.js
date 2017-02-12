@@ -44,18 +44,24 @@ app.use((req, res, next) => {
 //Api routes
 app.use('/api', api);
 
-
-
-
-
 io.on('connection', function (socket) {
     //user is connected...
-    console.log('a user connected');
-
+    console.log("A User connected");
+    //join a room
+    socket.on('join room', function(room) {
+        console.log('joining room', room);
+        socket.join(room);
+    });
+    //leave a room
+    socket.on('leave room', function(room) {
+        console.log('leaving room', room);
+        socket.leave(room);
+    });
     //when user sends a message
-    socket.on('chat message', function (msg) {
-        console.log('message sent: ' + msg);
-        io.emit('chat message', msg);
+    socket.on('userMessage', function (msg) {
+        var room = msg.class;
+        console.log('message sent to: ' + room);
+        io.emit(room, msg);
     });
 
     //when user leaves, do something
