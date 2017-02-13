@@ -18,26 +18,18 @@
 
 @media screen and (max-width: 767px) {
   .sideBar {
-    width: 300px;
+    width: 80%;
     position: absolute;
-    transform: translateX(-300px); }
+    transform: translateX(-100%); }
 
   .sideBarOpen {
     opacity: 0.9;
-    transform: translateX(0px); }
+    transform: translateX(0); }
 
   .content-container-moveX {
-    transform: translateX(300px); } }
+    transform: translateX(80%); } }
 .classroom {
   height: 100%; }
-  @media screen and (max-width: 767px) {
-    .classroom .shadow-active {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      transition: background-color 0.4s;
-      z-index: 99; } }
   .classroom .sendMsg {
     position: absolute;
     bottom: 0;
@@ -520,6 +512,14 @@ body {
     margin: 0;
     height: 100%;
     width: 100%; }
+    @media screen and (max-width: 767px) {
+      body .outer-container .shadow-active {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: background-color 0.4s;
+        z-index: 99; } }
   body .content-container {
     height: 100%;
     overflow: hidden;
