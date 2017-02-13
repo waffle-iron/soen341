@@ -1,16 +1,51 @@
+#search {
+  border-top: thin solid  #e5e5e5;
+  border-right: thin solid #e5e5e5;
+  border-bottom: thin solid  #e5e5e5;
+  border-left: thin solid  #e5e5e5;
+  border-radius: 2px;
+  background-color: #696c75;
+  float: left;
+  height: 30px;
+  margin: .8em 0 0 2em;
+  outline: 0;
+  padding: .4em 0 .4em .6em;
+  width: 50%;
+  color: white; }
+
+#button-holder {
+  background-color: #696c75;
+  border-top: thin solid #e5e5e5;
+  border-right: thin solid #e5e5e5;
+  border-bottom: thin solid  #e5e5e5;
+  border-left: thin solid  #e5e5e5;
+  border-radius: 2px;
+  cursor: pointer;
+  float: left;
+  height: 30px;
+  margin: 11px 0 0 0;
+  text-align: center;
+  width: 20%; }
+
+#button-holder img {
+  margin: 4px;
+  width: 15px; }
+
 .sideBar {
   height: 100%;
   padding: 0;
   z-index: 99;
-  background-color: #D3D6DB;
+  background-color: #474647;
   transition: transform ease-in 0.5s; }
-  .sideBar ul {
-    padding-left: 20px;
-    list-style: none; }
-    .sideBar ul li {
-      margin: 20px; }
-      .sideBar ul li span {
-        color: red; }
+  .sideBar p {
+    text-align: center;
+    height: 25px;
+    background: #944654;
+    font-size: 1em; }
+  .sideBar p:hover {
+    background-color: #6C333E; }
+  .sideBar a {
+    color: white; }
 
 .sideBar-toggle {
   margin-left: 9px;

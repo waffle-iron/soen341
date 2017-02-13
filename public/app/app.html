@@ -17,12 +17,25 @@
 </head>
 <body ng-app="app" ng-controller="appCtrl">
     <div class="row outer-container">
+        <div style="background-color:#474647; height:10px" class="col-md-12"></div>
+
         <div id="sideBar" class="col-sm-3 col-md-2 sideBar">
-            <ul>
-                <li><a ng-href="#/class/{{'comp346'}}">Comp 346</a></li>
-                <li><a ng-href="#/class/{{'engr371'}}">Engr 371</a></li>
-                <li><span>Class Rooms go here</span></li>
-            </ul>
+            <div style="margin-top:20px;">
+                <input placeholder="search..." type="text" name="" id="search" >
+                <div id='button-holder' >
+                    <img style="padding-top:2px" src='../images/search.png' />
+                </div>
+            </div>
+
+            <div style="padding-top: 90px"></div>
+
+                <p style="text-align: left;color:white; padding-left:5px; font-family:impact; font-size: 1.2em; background-color:transparent"> CLASSES:</p>
+                <p><a ng-href="#/class/{{'comp346'}}">Comp 346</a></p>
+                <p><a ng-href="#/class/{{'engr371'}}">Engr 371</a></p>
+                <p style="text-align: left;color:white; padding-left:5px; font-family:impact; font-size: 1.2em; background-color:transparent">CLASSROOMS:</p>
+                <p><a ng-href="#/class/{{'comp346'}}">Comp 346 - JMSB</a></p>
+                <p><a ng-href="#/class/{{'engr371'}}">Engr 371 - Hall buildng</a></p>
+
         </div>
         <div id="content" class="col-sm-9 col-md-10 content-container">
             <nav class="navbar navbar-default">
@@ -57,7 +70,7 @@
                     </div>
                 </div>
             </nav>
-            <div class="content" ng-view></div>
+            <div style="background-color:#D8DEE5" class="content" ng-view></div>
         </div>
     </div>
     <!--<div class="col-sm-3 nav">-->

@@ -1,36 +1,76 @@
-.sideBar{
-  height:100%;
-  padding:0;
-  z-index:99;
-  background-color:$secondary_color;
-  transition: transform ease-in 0.5s;
-  ul{
-    padding-left:20px;
-    list-style:none;
-    li{
-      margin:20px;
-      span{
-        color:red;
+
+#search{
+    border-top:thin solid  #e5e5e5;
+    border-right:thin solid #e5e5e5;
+    border-bottom:thin solid  #e5e5e5;
+    border-left:thin solid  #e5e5e5;
+    border-radius: 2px;
+    background-color: #696c75;
+    float:left;
+    height:30px;
+    margin:.8em 0 0 2em;
+    outline:0;
+    padding:.4em 0 .4em .6em;
+    width: 50%;
+    color:white;
+  }
+
+  #button-holder{
+    background-color: #696c75;
+    border-top:thin solid #e5e5e5;
+    border-right:thin solid #e5e5e5;
+    border-bottom:thin solid  #e5e5e5;
+    border-left:thin solid  #e5e5e5;
+    border-radius: 2px;
+    cursor:pointer;
+    float:left;
+    height:30px;
+    margin:11px 0 0 0;
+    text-align:center;
+    width:20%;
+  }
+
+  #button-holder img {
+      margin: 4px;
+      width: 15px;
+  }
+    .sideBar{
+      height:100%;
+      padding:0;
+      z-index:99;
+      background-color:#474647;
+      transition: transform ease-in 0.5s;
+      p{
+        text-align: center;
+        height:25px;
+        background: #944654;
+        font-size: 1em;
+      }
+      p:hover {
+        background-color: #6C333E;
+      }
+      a{
+        color:white;
       }
     }
-  }
-}
-.sideBar-toggle{
-  margin-left: 9px;
-  float:left;
-}
-//for phones
-@media screen and (max-width: 767px) {
-  .sideBar{
-    width:300px;
-    position:absolute;
-    transform:translateX(-300px);
-  }
-  .sideBarOpen{
-    opacity:0.9;
-    transform:translateX(0px);
-  }
-  .content-container-moveX{
-    transform:translateX(300px);
-  }
-}
+    .sideBar-toggle{
+      margin-left: 9px;
+      float:left;
+    }
+
+    //for phones
+    @media screen and (max-width: 767px) {
+      .sideBar{
+        width:300px;
+        position:absolute;
+        transform:translateX(-300px);
+      }
+      .sideBarOpen{
+        opacity:0.9;
+        transform:translateX(0px);
+      }
+      .content-container-moveX{
+        transform:translateX(300px);
+      }
+    }
+
