@@ -18,6 +18,10 @@ router.get('/login', (req,res) => {
     res.sendFile(path.join(__dirname, '../../public/views/login.html'));
 });
 
+router.get('/register', (req,res) => {
+    res.sendFile(path.join(__dirname, '../../public/views/register.html'));
+});
+
 passport.use(new LocalStrategy(
     function(email, password, done) {
         User.findOne({ email: email }, (err, user) => {
