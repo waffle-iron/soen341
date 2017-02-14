@@ -13,7 +13,7 @@ const db = require('../../config/db.js');
 mongoose.connect(db);
 
 let User = mongoose.model('User', new Schema({
-    id: {
+    _id: {
         String,
         unique: true
     },
