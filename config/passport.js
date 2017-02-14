@@ -30,7 +30,7 @@ module.exports = function(passport) {
                     return done(null, false, req.flash('loginMessage', 'No user found.'));
                 }
                 if (!user.validPassword(password)) {
-                    return done(null, false, req.flash('loginMessage', 'Invalid password.')); // create the loginMessage and save it to session as flashdata
+                    return done(null, false, req.flash('loginMessage', 'Invalid password.'));
                 }
                 return done(null, user);
             });
@@ -46,7 +46,7 @@ module.exports = function(passport) {
         },
         (req, email, password, done) => {
             process.nextTick(function() {
-                User.findOne({ 'local.email' :  email }, function(err, user) {
+                User.findOne({ email :  email }, function(err, user) {
                     if (err)
                         return done(err);
                     if (user) {
@@ -56,8 +56,8 @@ module.exports = function(passport) {
                         const newUser = new User();
 
                         newUser.email = email;
-                        newUser.local.password = newUser.generateHash(password);
-                        newUser.local.name = req.body.name;
+                        newUser.password = newUser.generateHash(password);
+                        newUser.name = req.body.name;
 
                         newUser.save(function(err) {
                             if (err)
@@ -65,11 +65,8 @@ module.exports = function(passport) {
                             return done(null, newUser);
                         });
                     }
-
                 });
-
             });
-
         }));
 
 
