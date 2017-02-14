@@ -3,4 +3,4 @@
  */
 module.exports = {
     uri : 'mongodb://chevaldeguerre.xyz:27017/famongo'
-}
+};
