@@ -10,18 +10,18 @@ const db = require('../../config/db.js');
 
 //Mongoose Schema ==============================================================================
 //input the mongodb uri here
-// mongoose.connect(db);
+mongoose.connect(db);
 
 let User = mongoose.model('User', new Schema({
-    id: ObjectId,
-    username: {
-        type: String,
+    id: {
+        String,
         unique: true
     },
-    email: {
-        type: String,
-        unique: true
-    }
+    name: String,
+    pass: String,
+    online: Boolean,
+    classUser: [String],
+    classMod: [String]
 }));
 
 
