@@ -1,8 +1,5 @@
 const mongoose = require('mongoose'),Schema =
     mongoose.Schema;
-const db = require('../../config/db.js');
-
-mongoose.connect(db.uri);
 
 let chatSchema = new Schema({
     id: String,

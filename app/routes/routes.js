@@ -2,59 +2,48 @@
  * Created by Kim on 1/31/2017.
  */
 'use strict';
-
-const express = require('express');
-const router = express.Router();
-const User = require('../models/user.js');
-const passport = require('passport'),
-    LocalStrategy = require('passport-local').Strategy;
 const path = require('path');
-const flash = require('connect-flash');
 
 
+module.exports = function(app, passport) {
 
-router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../public/views/landing.html'));
-});
 
-router.get('/login', (req,res) => {
-    res.sendFile(path.join(__dirname, '../../public/views/login.html'));
-});
+    app.get('/', (req, res) => {
+        res.sendFile(path.join(__dirname, '../../public/views/landing.html'));
+    });
 
-router.get('/register', (req,res) => {
-    res.sendFile(path.join(__dirname, '../../public/views/register.html'));
-});
+    app.get('/login', (req, res) => {
+        res.sendFile(path.join(__dirname, '../../public/views/login.html'));
+    });
 
-passport.use('local-login', new LocalStrategy({
-        usernameField : 'email',
-        passwordField : 'password',
-        passReqToCallback: true
-    },
-    (req, email, password, done) => {
-        User.findOne({ email: email }, (err, user) => {
-            if (err) {
-                return done(err);
-            }
-            if (!user) {
-                return done(null, false, req.flash('loginMessage', 'No user found.'));
-            }
-            if (!user.validPassword(password)) {
-                return done(null, false, req.flash('loginMessage', 'Invalid password.')); // create the loginMessage and save it to session as flashdata
-            }
-            return done(null, user);
-        });
-    }
-));
+    app.get('/register', (req, res) => {
+        res.sendFile(path.join(__dirname, '../../public/views/register.html'));
+    });
 
-router.post('/login',
-    passport.authenticate('local-login', { successRedirect: '/',
-        failureRedirect: '/login',
-        failureFlash: true
-    })
-);
+    app.post('/login',
+        passport.authenticate('local-login', {
+            successRedirect: '/',
+            failureRedirect: '/login',
+            failureFlash: true
+        }));
 
-router.get('/chat', function(req,res) {
-    res.sendFile(path.join(__dirname, '/../../public/views/classroom.html'));
-});
+    app.post('/register',
+        passport.authenticate('local-signup', {
+            successRedirect: '/chat',
+            failureRedirect: '/register',
+            failureFlash: true
+        }));
 
-module.exports = router;
+    app.get('/chat', isLoggedIn, function (req, res) {
+        res.sendFile(path.join(__dirname, '/../../public/views/classroom.html'));
+    });
+
+};
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+    res.redirect('/');
+}
+
+

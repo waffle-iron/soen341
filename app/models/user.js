@@ -4,14 +4,11 @@
 'use strict';
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
-const db = require('../../config/db.js');
 const bcrypt = require('bcrypt-nodejs');
 
 
 //Mongoose Schema ==============================================================================
 //input the mongodb uri here
-mongoose.connect(db.uri);
 
 let User = mongoose.Schema({
     id: String,
@@ -30,7 +27,7 @@ User.methods.generateHash = (password) => {
 
 // Validate password
 User.methods.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.password);
+    return bcrypt.compareSync(password, this.local.password);
 };
 
 
