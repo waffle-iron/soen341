@@ -1,7 +1,8 @@
-let mongoose = require('mongoose'),Schema =
+const mongoose = require('mongoose'),Schema =
     mongoose.Schema;
+const db = require('.config/db.js');
 
-mongoose.connect('mongodb://138.197.138.222:27017/famongo');
+mongoose.connect(db);
 
 let chatSchema = new Schema({
     _id: String,
@@ -22,3 +23,4 @@ let classSchema = new Schema({
 
 let Class = mongoose.model('classRoom',classSchema);
 
+module.exports = Class;
