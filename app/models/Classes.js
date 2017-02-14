@@ -1,18 +1,18 @@
 const mongoose = require('mongoose'),Schema =
     mongoose.Schema;
-const db = require('.config/db.js');
+const db = require('../../config/db.js');
 
-mongoose.connect(db);
+mongoose.connect(db.uri);
 
 let chatSchema = new Schema({
-    _id: String,
+    id: String,
     name: String,
     time: Date,
     message: String
 });
 
 let classSchema = new Schema({
-    _id: String,
+    id: String,
     active: Boolean,
     time: Date,
     name: String,

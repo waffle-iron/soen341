@@ -11,6 +11,9 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 const logger = require('morgan');
 const session = require('express-session');
+const routes = require('./app/routes/routes');
+const api = require('./app/routes/api');
+const flash = require('connect-flash');
 
 
 //in order to parse body responses
@@ -20,14 +23,12 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 //to log sever connections
 app.use(logger('dev'));
-
 // set the static files location /public/img will be /img for us
 app.use(express.static(__dirname + '/public'));
 //serve bower components
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
-
-const routes = require('./app/routes/routes');
-const api = require('./app/routes/api');
+// to have a flash message for login/register
+app.use(flash());   //TODO UNCOMMENT THIS WHEN SESSION HAS BEEN IMPLEMENTED
 
 //Unprotected routes
 app.use('/', routes);
